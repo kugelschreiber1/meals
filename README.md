@@ -54,24 +54,37 @@ It is the entry point of the application.
 ### 7. Screenshots
 This folder contains the screenshots of the application.
 
-#### Favorite Meals Screen
-<img src="screenshots/favourites_screen.png" width="300" height=auto/>
+<div style="text-align: center;">
+    <div>
+        <img src="screenshots/favourites_screen.png" width="300" height="auto" alt="Favorite Meals Screen"/>
+        <p><strong>Favorite Meals Screen</strong></p>
+    </div>
 
-#### Filters Screen
-<img src="screenshots/filters_screen.png" width="300" height=auto/>
+    <div>
+        <img src="screenshots/filters_screen.png" width="300" height="auto" alt="Filters Screen"/>
+        <p><strong>Filters Screen</strong></p>
+    </div>
 
-#### Home Screen
-<img src="screenshots/home_screen.png" width="300" height=auto/>
+    <div>
+        <img src="screenshots/home_screen.png" width="300" height="auto" alt="Home Screen"/>
+        <p><strong>Home Screen</strong></p>
+    </div>
 
-#### Main Drawer
-<img src="screenshots/main_drawer.png" width="300" height=auto/>
+    <div>
+        <img src="screenshots/main_drawer.png" width="300" height="auto" alt="Main Drawer"/>
+        <p><strong>Main Drawer</strong></p>
+    </div>
 
-#### Meals Screen
-<img src="screenshots/meals_screen.png" width="300" height=auto/>
+    <div>
+        <img src="screenshots/meals_screen.png" width="300" height="auto" alt="Meals Screen"/>
+        <p><strong>Meals Screen</strong></p>
+    </div>
 
-#### Meal Details Screen
-<img src="screenshots/meal_details_screen.png" width="300" height=auto/>
-
+    <div>
+        <img src="screenshots/meal_details_screen.png" width="300" height="auto" alt="Meal Details Screen"/>
+        <p><strong>Meal Details Screen</strong></p>
+    </div>
+</div>
 
 
 ## Getting Started
