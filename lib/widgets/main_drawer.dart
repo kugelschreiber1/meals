@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:meals/widgets/drawer_list_item.dart';
 
 class MainDrawer extends StatelessWidget {
-  const MainDrawer({super.key});
+  const MainDrawer({super.key, required this.onSelectScreen});
+
+  final void Function(String identifier) onSelectScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -40,49 +43,23 @@ class MainDrawer extends StatelessWidget {
               ],
             ),
           ),
-          ListTile(
-            leading: Icon(
-              Icons.restaurant,
-              size: 26.0,
-              color: Theme.of(context).colorScheme.onBackground,
-            ),
-            title: Text(
-              'Meals',
-              style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                    color: Theme.of(context).colorScheme.onBackground,
-                    fontSize: 24.0,
-                  ),
-            ),
-            onTap: () {},
+          DrawerListItem(
+            icon: Icons.restaurant,
+            titleText: 'Meals',
+            onTap: () {
+              onSelectScreen('meals');
+            },
           ),
-          ListTile(
-            leading: Icon(
-              Icons.settings,
-              size: 26.0,
-              color: Theme.of(context).colorScheme.onBackground,
-            ),
-            title: Text(
-              'Filters',
-              style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                    color: Theme.of(context).colorScheme.onBackground,
-                    fontSize: 24.0,
-                  ),
-            ),
-            onTap: () {},
+          DrawerListItem(
+            icon: Icons.settings,
+            titleText: 'Filters',
+            onTap: () {
+              onSelectScreen('filters');
+            },
           ),
-          ListTile(
-            leading: Icon(
-              Icons.close,
-              size: 26.0,
-              color: Theme.of(context).colorScheme.onBackground,
-            ),
-            title: Text(
-              'Close',
-              style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                    color: Theme.of(context).colorScheme.onBackground,
-                    fontSize: 24.0,
-                  ),
-            ),
+          DrawerListItem(
+            icon: Icons.close,
+            titleText: 'Close',
             onTap: () {
               Navigator.of(context).pop();
             },
