@@ -55,15 +55,17 @@ It is the entry point of the application.
 This folder contains the screenshots of the application.
 
 <div style="display: flex; flex-direction: column;">
-    <div style="display: flex; flex-direction: row;">
-        <img src="screenshots/home_screen.png" width="250" height=auto/>
-        <img src="screenshots/home_screen.png" width="250"  height=auto/>
-        <img src="screenshots/home_screen.png" width="250" height=auto />
+    <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
+        <img src="screenshots/favourites_screen.png" width="300" height=auto/>
+        <img src="screenshots/filters_screen.png" width="250"  height=auto/>
     </div>
-    <div style="display: flex; flex-direction: row;">
+    <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
         <img src="screenshots/home_screen.png" width="250" height=auto/>
-        <img src="screenshots/home_screen.png" width="250"  height=auto/>
-        <img src="screenshots/home_screen.png" width="250" height=auto />
+        <img src="screenshots/main_drawer.png" width="250"  height=auto/>
+    </div>
+    <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
+        <img src="screenshots/meals_screen.png" width="250" height=auto/>
+        <img src="screenshots/meal_details_screen.png" width="250"  height=auto/>
     </div>
 </div>
 
