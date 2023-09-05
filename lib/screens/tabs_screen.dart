@@ -1,45 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meals/screens/categories_screen.dart';
+import 'package:meals/screens/filters_screen.dart';
 import 'package:meals/screens/meals_screen.dart';
-import 'package:meals/models/meal_model.dart';
 import 'package:meals/widgets/main_drawer.dart';
+import 'package:meals/providers/favourites_provider.dart';
+import 'package:meals/providers/filters_provider.dart';
 
-class TabsScreen extends StatefulWidget {
+class TabsScreen extends ConsumerStatefulWidget {
   const TabsScreen({super.key});
 
   @override
-  State<TabsScreen> createState() => _TabsScreenState();
+  ConsumerState<TabsScreen> createState() => _TabsScreenState();
 }
 
-class _TabsScreenState extends State<TabsScreen> {
+class _TabsScreenState extends ConsumerState<TabsScreen> {
   int _selectedPageIndex = 0;
-
-  final List<Meal> _favouriteMeals = [];
-
-  void _showInfoMessage(String message) {
-    ScaffoldMessenger.of(context).clearSnackBars();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-      ),
-    );
-  }
-
-  void _toggleMealFavouriteStatus(Meal meal) {
-    final isFavourite = _favouriteMeals.contains(meal);
-
-    if (isFavourite) {
-      setState(() {
-        _favouriteMeals.remove(meal);
-        _showInfoMessage("Meal is no longer a favourite");
-      });
-    } else {
-      setState(() {
-        _favouriteMeals.add(meal);
-        _showInfoMessage("Meal added as a favourite");
-      });
-    }
-  }
 
   void _selectPage(int index) {
     setState(() {
@@ -47,17 +23,31 @@ class _TabsScreenState extends State<TabsScreen> {
     });
   }
 
+  void _setScreen(String identifier) async {
+    Navigator.of(context).pop();
+    if (identifier == 'filters') {
+      await Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const FiltersScreen(),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    Widget activePage =
-        CategoryScreen(onToggleFavourite: _toggleMealFavouriteStatus);
+    final mealsFilteredByPreference = ref.watch(filteredMealsProvider);
+
+    Widget activePage = CategoryScreen(
+      availableMeals: mealsFilteredByPreference,
+    );
 
     String activePageTitle = 'Categories';
 
     if (_selectedPageIndex == 1) {
+      final favouriteMeals = ref.watch(favouriteMealsProvider);
       activePage = MealsScreen(
-        meals: _favouriteMeals,
-        onToggleFavourite: _toggleMealFavouriteStatus,
+        meals: favouriteMeals,
       );
       activePageTitle = 'Your Favourites';
     }
@@ -67,7 +57,9 @@ class _TabsScreenState extends State<TabsScreen> {
         centerTitle: true,
         title: Text(activePageTitle),
       ),
-      drawer: const MainDrawer(),
+      drawer: MainDrawer(
+        onSelectScreen: _setScreen,
+      ),
       body: activePage,
       bottomNavigationBar: BottomNavigationBar(
         items: const [
