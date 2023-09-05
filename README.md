@@ -55,16 +55,16 @@ It is the entry point of the application.
 This folder contains the screenshots of the application.
 
 #### Favorite Meals Screen
-<img src="screenshots/favourites_screen.png" width="300" height=auto/>
+<img src="screenshots/favourites_screen.png" width="250" height=auto/>
 
 #### Filters Screen
-<img src="screenshots/filters_screen.png" width="300" height=auto/>
+<img src="screenshots/filters_screen.png" width="250" height=auto/>
 
 #### Home Screen
-<img src="screenshots/home_screen.png" width="300" height=auto/>
+<img src="screenshots/home_screen.png"width="250" height=auto/>
 
 #### Main Drawer
-<img src="screenshots/main_drawer.png" width="300" height=auto/>
+<img src="screenshots/main_drawer.png" width="250" height=auto/>
 
 #### Meals Screen
 <img src="screenshots/meals_screen.png" width="250" height=auto/>
