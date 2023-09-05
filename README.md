@@ -53,7 +53,20 @@ It is the entry point of the application.
 
 ### 7. Screenshots
 This folder contains the screenshots of the application.
-To be added later
+
+<div style="display: flex; flex-direction: column;">
+    <div style="display: flex; flex-direction: row;">
+        <img src="screenshots/home_screen.png" width="250" height=auto/>
+        <img src="screenshots/home_screen.png" width="250"  height=auto/>
+        <img src="screenshots/home_screen.png" width="250" height=auto />
+    </div>
+    <div style="display: flex; flex-direction: row;">
+        <img src="screenshots/home_screen.png" width="250" height=auto/>
+        <img src="screenshots/home_screen.png" width="250"  height=auto/>
+        <img src="screenshots/home_screen.png" width="250" height=auto />
+    </div>
+</div>
+
 
 ## Getting Started
 
