@@ -61,7 +61,7 @@ This folder contains the screenshots of the application.
 <img src="screenshots/filters_screen.png" width="250" height=auto/>
 
 #### Home Screen
-<img src="screenshots/home_screen.png"width="250" height=auto/>
+<img src="screenshots/home_screen.png" width="250" height=auto/>
 
 #### Main Drawer
 <img src="screenshots/main_drawer.png" width="250" height=auto/>
